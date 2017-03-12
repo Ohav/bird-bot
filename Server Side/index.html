@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn_Try").click(function(){
+                $.ajax({url: "./reports", type:'POST', data: { 'id' : 3, 'amount' : 5, 'flockId' : '100'}, success: function(result){
+                    $("#show").html(result);
+                }});
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+</head>
+<body>
+ <button id="btn_Try" value="Click!!">Click!!!</button>
+<div id="show"></div>
+<button id="btnReports" onclick="window.location = './reports'">watch reports</button>
+</body>
+</html>
